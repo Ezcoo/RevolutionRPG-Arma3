@@ -50,11 +50,23 @@ In short, you **_are_** allowed to...
 - include installation instructions of the modified source code.
 
 
+## Requirements
+
+### Playing
+
+- _Arma 3_
+- _Arma 3 DLCs_ (optional, depending on the server)
+
+### Hosting
+
+- _Arma 3_ **or** _Arma 3 Server_ dedicated Steam package (see **Development setup** below). Note that you need to host the gamemode on a _dedicated_ server, i.e. with `arma3server_x64.exe`. Player hosted (ingame) servers do not work properly.
+
+
 ## Installation
 
 - There are two important core (containing code and data) folders in the main directory of repository: `core` and `coreUi`.
 
-### Option 1: Deploying Revolution RPG on server
+### Option 1: Deploying Revolution RPG on server:
 
 - Clone this repository either with a Git client or download the ZIP file from the button in upper part of this page.
 - Unzip the ZIP file (if it's what you downloaded manually).
@@ -62,23 +74,50 @@ In short, you **_are_** allowed to...
 - Copy the `coreUi` folder (located at the main directory of this repository) into `Revolution.WORLDNAME/ui/` folder (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!
 - Optionally, you might want to compile the mission files into a packed PBO file for convenience. Use the tool you prefer for that.
 
-### Option 2: Development setup (for your convenience)
+
+### Option 2: Development setup (for your convenience):
 
 - I strongly suggest creating some **hard** (**directory**) links (_not_ symbolic links or file links!) as follows (see example guide here: https://www.howtogeek.com/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/). This allows you to edit single source of truth that gets reflected automatically to other relevant folders by your operating system. There's no need to copy and paste edited files manually anymore every time you make a change to source code! (It's a very common source of bugs and errors too.)
+
+
+
+**PHASE 1**
+
+ - Fork this repository (or just download it with a Git client or as ZIP file from the upper part of this page) – it's up to you to choose the method.
+
  - **Destination/Link #1**: `Revolution.WORLDNAME/functions/core` folder. (Depending on the tool or script/command line you're using, you might need to create an empty `Revolution.WORLDNAME/functions/core` folder at first).
- - **Source/Target #1**: `core` folder (located at the main directory of this repository).
+ - **Source/Target #1**: `core` folder (located at the main directory of this repository, wherever you have it on your disk).
 
  - **Destination/Link #2**: `Revolution.WORLDNAME/ui/coreUi` folder. (Depending on the tool or script/command line you're using, you might need to create an empty `Revolution.WORLDNAME/ui/uiCore` folder at first).
- - **Source/Target #2**: `coreUi` folder (located at the main directory of this repository).
+ - **Source/Target #2**: `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk).
 
-- Additionally, after completing the previous steps in Development setup, you might want to make (preferably again hard) _directory_ links to your profile MPMissions folder (`yourArma3ProfileFolder/mpmissions` (for quick development in 3DEN editor) **and** game installation MPMissions directory (`Steam/steamapps/common/Arma 3/MPMissions`) for actual testing (including locality) with other players.
+**PHASE 2 — 3DEN Editor setup** (optional)
+
+- Additionally, **after** – and only after – completing the previous steps in Development setup, you might want to make (preferably again hard) _directory_ links to your profile MPMissions folder (`yourArma3ProfileFolder/mpmissions` (for quick development in 3DEN editor) **and** game installation MPMissions directory (`Steam/steamapps/common/Arma 3/MPMissions`) for actual testing (including locality) with other players.
  - For quick editing in 3DEN editor: 
   - Note! `yourArma3ProfileFolder` might be located at `yourUsername\Documents\Arma 3` **or** `yourUsername\Documents\Arma 3 - Other Profiles` on Windows.
-  - **Destination/Link #1**: `Revolution.WORLDNAME` folder in `yourArma3ProfileFolder` (!). (Depending on the tool or script/command line you're using, you might need to create an empty `yourArma3ProfileFolder/mpmissions/Revolution.WORLDNAME` folder at first).
-  - **Source/Target #1**: `Revolution.WORLDNAME` folder (located at the main directory of this repository).
+  - **Destination/Link #3**: `Revolution.WORLDNAME` folder in `yourArma3ProfileFolder` (!). (Depending on the tool or script/command line you're using, you might need to create an empty `yourArma3ProfileFolder/mpmissions/Revolution.WORLDNAME` folder at first).
+  - **Source/Target #3**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
+
+**PHASE 3 — local dedicated server setup** (optional)
+
  - For locality testing or testing the code with multiple players on an actual _dedicated_ Arma 3 server:
-  - `yourArma3ServerInstallDirectory` (can be either Arma 3 install directory or dedicated Arma 3 Server Steam package).
-   - Note! If you're using Arma 3 Server Steam package, you need to edit a file called `steam_appid.txt` in its install directory and replace the value with in the file `107410` with e.g. Notepad (do **not** use a text editor like _Word_ or _Wordpad_!) 
+  - `yourArma3ServerInstallDirectory` can be either Arma 3 install directory or dedicated Arma 3 Server Steam package.
+   - Note! If you're using dedicated Arma 3 Server Steam package, you need to edit a file called `steam_appid.txt` in its install directory and replace the value with in the file `107410` with e.g. Notepad (do **not** use a text editor like _Word_ or _Wordpad_!). Then set the `steam_appid.txt` file to read-only mode. (Right-click the file in File Explorer and select "Properties", then tick the "Read only" box.)
+  - **Destination/Link #4**: `Revolution.WORLDNAME` folder in your Arma 3 (Server) installation folder -> `MPMissions` folder. (Depending on the tool or script/command line you're using, you might need to create an empty `Arma3OrArma3ServerInstallDirectory/MPMissions/Revolution.WORLDNAME` folder at first).
+  - **Source/Target #4**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
+
+**Repeat** the development setup steps above for **each** Arma 3 map that you wish to play on (that's also supported, unless you create the configs for the map yourself).
+
+**STARTING EDITING AFTER COMPLETING DEVELOPMENT SETUP**
+
+- **Open** the **main directory** of the **copied repository** (wherever you have it on your disk) with your favourite code editor. (My choice is _Visual Studio Code_ with some awesome extensions making scripting Arma a ton easier.)
+
+**IMPORTANT!**
+
+If you completed the previous steps in development setup:
+
+- If you want to modify **core** files, edit **only** files inside the `core` (or `coreUI`) folder in the **main repository folder**. The changes get reflected to other folders automatically thanks to the (hard directory) links that you made in previous steps. (Just remember to save your changes in the code editor unless it does it automatically.)
 
 ## Special thanks
 
