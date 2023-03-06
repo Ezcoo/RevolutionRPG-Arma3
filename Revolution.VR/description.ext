@@ -1,0 +1,33 @@
+
+#include "functions\CfgFunctions.hpp"
+
+#include "ui\mapSpecific\defines.hpp"
+#include "ui\coreUi\dialogs.hpp"
+#include "ui\coreUi\RscTitles.hpp"
+#include "functions\core\gpsRouting\config.hpp"
+
+class Header {
+	gameType		= RPG;
+	minPlayers		= 0;
+	maxPlayers		= 64;
+};
+
+author = "Ezcoo";
+onLoadName = "Revolution RPG";
+onLoadMission = "An alternative approach to roleplaying in Arma 3. Light but also high quality roleplay and lots of PvP.";
+loadScreen = "revolution_logo.paa";
+
+disabledAI			= 1;
+aiKills				= 0;
+
+joinUnassigned		= 1;
+
+enableDebugConsole  = 2;
+
+class CfgDebriefing {
+	class End1 {
+		title				= "Thanks for playing Revolution!";
+		subtitle			= "";
+		description			= "Thank you, come again!";
+	};
+};
