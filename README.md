@@ -165,7 +165,7 @@ _In case of you completed the previous steps in development setup (again, strong
 - Core files (core file = used on all maps) must be added to `core` (functions) or `coreUi` (user interfaces and base defines) folders (located at the main directory of this repository, wherever you have it on your disk).
 - Map specific files have to be added to `Revolution.WORLDNAME/functions/mapSpecific/WORLDNAME` (functions) or `Revolution.WORLDNAME/ui/mapSpecific/WORLDNAME` (map specific defines and user interfaces).
 
-- _Use CfgFunctions! It was added for a reason. Really, not joking here._
+_Use CfgFunctions! It was added for a reason. Really, not joking here._
 
 
 ## Special thanks
