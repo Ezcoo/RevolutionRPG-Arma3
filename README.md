@@ -135,7 +135,7 @@ In short, you **_are_** allowed to...
 
 ### 3. Starting editing after completing development setup
 
-**3.** 
+**3.1.** 
 - **Open** the **main directory** of the **copied repository** (wherever you have it on your disk) with your favourite code editor. (My choice is _Visual Studio Code_ with some awesome extensions making scripting Arma a ton easier.)
 
 **IMPORTANT!**
