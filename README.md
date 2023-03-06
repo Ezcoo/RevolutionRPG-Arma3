@@ -21,10 +21,12 @@ The ultimate goal of this project is to bring back the Arma 2 style, mindset and
 
 
 
-Please note that due to e.g. some external code used in this project, the license of the source code is **GNU GPLv3** (see LICENSE file in main directory of the repository). See https://fossa.com/blog/open-source-software-licenses-101-gpl-v3/ for well written explanation.
+## GNU GPLv3 license
+
+Please note that due to e.g. some external code used in this project, the license of the source code is **GNU GPLv3**. See `LICENSE` file in main directory of the repository. See https://fossa.com/blog/open-source-software-licenses-101-gpl-v3/ for well written explanation.
 
 
-In short, you **are** allowed to...
+In short, you **_are_** allowed to...
 
 - use the code for commercial purposes
 - change the code
@@ -36,6 +38,22 @@ In short, you **are** allowed to...
 
 - release the _modified source_ code publicly
 - explain/state the changes made to the original source code
-- include the same license (GNU GPLv3) with _full_ license text in the source code
-- include copies of the original copyright notices already included in the source code you've edited
+- include the same license (GNU GPLv3) with _full_ license text in the modified source code
+- include copies of the original copyright notices already included in the source code that you've edited
 - include installation instructions of the modified source code.
+
+
+## Special thanks
+
+I'd like to thank everyone involved in this project and it's predecessors. Special thanks go to the following people and projects:
+
+[**A3GPS project (GitHub)**](https://github.com/AmauryD/A3GPS)
+- **AmauryD**
+- **code34**
+- **Kifkick**
+
+**Others:**
+
+- **qbt** for allowing me to use the code of the predecessor of this project, _Daylight RP_ (and teaching me so many things about SQF in general etc.)
+- **7erra** for his awesome CfgFunctions generation script that I modified further
+- Everyone in the Arma community who has helped me to make this happen (just to name a few: **Leopard20**, **Dedmen**, **Lou Montana**, **Sa-Matra**, **koalas**, **R3vo**) – if I forgot to name you here, contact me!
