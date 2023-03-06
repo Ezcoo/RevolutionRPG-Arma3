@@ -138,13 +138,13 @@ In short, you **_are_** allowed to...
 **3.1.** 
 - **Open** the **main directory** of the **copied repository** (wherever you have it on your disk) with your favourite code editor. (My choice is _Visual Studio Code_ with some awesome extensions making scripting Arma a ton easier.)
 
-**IMPORTANT!**
+### **IMPORTANT!**
 
 If you completed the previous steps in development setup:
 
 - If you want to modify **core** files, edit **only** files inside the `core` and `coreUI` folders in the **main repository folder**, wherever it's located on your disk. The changes get reflected to other folders automatically thanks to the (hard directory) links that you created in previous steps. (Just remember to save your changes in the code editor unless your editor does it automatically.)
 
-## 4. Automatic generation of `CfgFunctions`
+### 4. Automatic generation of `CfgFunctions`
 - This repository contains a Python script that generates `CfgFunctions.hpp` file that you can run after adding, removing or renaming functions. It's originally developed by **7erra** and further modified by me, **Ezcoo**. You need to have modern version of Python installed for it to work (install Python from Microsoft Store (recommended method) on Windows or download and install it from here: [https://www.python.org/downloads/](https://www.python.org/downloads/)).
 
 **4.1.** 
