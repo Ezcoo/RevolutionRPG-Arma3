@@ -86,7 +86,7 @@ In short, you **_are_** allowed to...
 - **This allows you to have the luxury of editing single file ("source of truth") that gets reflected automatically to other relevant folders by your operating system.** There's no need to copy and paste edited files manually anymore every time you make a change to source code! (It's a very common source of bugs and errors too.)
 
 
-**PHASE 1**
+**PHASE 2.1.**
 
 **2.1.1.** Fork this repository (or just download it with a Git client or as ZIP file from the upper part of this page) – it's up to you to choose the method.
 
@@ -101,7 +101,7 @@ In short, you **_are_** allowed to...
 - **Source/Target #2**: `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 
-**PHASE 2 — 3DEN Editor setup** (optional)
+**PHASE 2.2. — 3DEN Editor setup** (optional)
 
 **2.2.1.** Additionally, **after** – and only after – completing the previous steps in Development setup, you might want to make (preferably again hard) _directory_ links to your profile MPMissions folder (`yourArma3ProfileFolder/mpmissions` (for quick development in 3DEN editor) **and** game installation MPMissions directory (`Steam/steamapps/common/Arma 3/MPMissions`) for actual testing (including locality) with other players.
 - For quick editing in 3DEN editor: 
@@ -112,7 +112,7 @@ In short, you **_are_** allowed to...
 - **Source/Target #3**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 
-**PHASE 3 — local dedicated server setup** (optional)
+**PHASE 2.3. — local dedicated server setup** (optional)
 
 **2.3.1.** For locality testing or testing the code with multiple players on an actual _dedicated_ Arma 3 server:
   - `yourArma3ServerInstallDirectory` can be either Arma 3 install directory or dedicated Arma 3 Server Steam package.
@@ -126,7 +126,7 @@ In short, you **_are_** allowed to...
 
 ### STARTING EDITING AFTER COMPLETING DEVELOPMENT SETUP
 
-**3.1.1.** **Open** the **main directory** of the **copied repository** (wherever you have it on your disk) with your favourite code editor. (My choice is _Visual Studio Code_ with some awesome extensions making scripting Arma a ton easier.)
+**3.** **Open** the **main directory** of the **copied repository** (wherever you have it on your disk) with your favourite code editor. (My choice is _Visual Studio Code_ with some awesome extensions making scripting Arma a ton easier.)
 
 **IMPORTANT!**
 
@@ -134,7 +134,7 @@ If you completed the previous steps in development setup:
 
 - If you want to modify **core** files, edit **only** files inside the `core` and `coreUI` folders in the **main repository folder**, wherever it's located on your disk. The changes get reflected to other folders automatically thanks to the (hard directory) links that you created in previous steps. (Just remember to save your changes in the code editor unless your editor does it automatically.)
 
-- This repository contains a Python script that generates `CfgFunctions.hpp` file that you can run after adding, removing or renaming functions. It's originally developed by **7erra** and further modified by me, **Ezcoo**. You need to have modern version of Python installed for it to work (install Python from Microsoft Store (recommended method) on Windows or download and install it from here: [https://www.python.org/downloads/](https://www.python.org/downloads/)).
+**4.** This repository contains a Python script that generates `CfgFunctions.hpp` file that you can run after adding, removing or renaming functions. It's originally developed by **7erra** and further modified by me, **Ezcoo**. You need to have modern version of Python installed for it to work (install Python from Microsoft Store (recommended method) on Windows or download and install it from here: [https://www.python.org/downloads/](https://www.python.org/downloads/)).
 
 **4.1.** Configure the script: open it in a code editor and replace the `TAG` variable (marked with comment) _value_ with your own _value_ if needed. Do not change the variable name itself! 
 
