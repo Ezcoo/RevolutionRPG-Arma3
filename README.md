@@ -4,9 +4,13 @@
 
 **Revolution RPG** is an atypical roleplaying gamemode in Arma 3.
 
+
 ## Why does this project exist?
 
-It's key areas of focus are:
+The ultimate goal of this project is to bring back the Arma 2 style, mindset and feel of RPG/Life gameplay with improved feature set.
+
+
+## Key focus areas
 
 - _light_, arcade roleplay that's still fun for everyone, including new players
 - allowing as much _creativity_ by players as possible
@@ -17,7 +21,6 @@ It's key areas of focus are:
 
 Another important aspect of Revolution RPG is that it returns the control of the game back to players: e.g. leaders ingame are voted by the players.
 
-The ultimate goal of this project is to bring back the Arma 2 style, mindset and feel of RPG/Life gameplay with improved feature set.
 
 ## Discord
 
