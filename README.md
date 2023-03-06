@@ -8,6 +8,7 @@ It's key areas of focus are:
 
 - _light_, arcade roleplay that's still fun for everyone, including new players
 - allowing as much _creativity_ by players as possible
+- minimal ruleset by default
 - _fast_ progression
 - _endgame_
 - lots of PvP action.
