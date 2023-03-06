@@ -66,20 +66,20 @@ In short, you **_are_** allowed to...
 
 - **There are two important core folders (containing code and data) in the main directory of repository: `core` and `coreUi`**.
 
-### Option 1: Deploying Revolution RPG on server:
+### 1. Deploying Revolution RPG on server:
 
-**1.** Clone this repository either with a Git client or download the ZIP file from the button in upper part of this page.
+**1.1.** Clone this repository either with a Git client or download the ZIP file from the button in upper part of this page.
 
-**2.** Unzip the ZIP file (if it's what you downloaded manually).
+**1.2.** Unzip the ZIP file (if it's what you downloaded manually).
 
-**3.** Copy the `core` folder (located at the main directory of this repository, wherever you have it on your disk) into `Revolution.WORLDNAME/functions/` (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!).
+**1.3.** Copy the `core` folder (located at the main directory of this repository, wherever you have it on your disk) into `Revolution.WORLDNAME/functions/` (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!).
 
-**4.** Copy the `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk) into `Revolution.WORLDNAME/ui/` folder (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!).
+**1.4.** Copy the `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk) into `Revolution.WORLDNAME/ui/` folder (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!).
 
-**(5.)** Optionally, you probably want to compile the mission files into a packed PBO file for multiple reasons (like optimization and bunch of other reasons). Use the tool you prefer for that.
+**(1.5.)** Optionally, you probably want to compile the mission files into a packed PBO file for multiple reasons (like optimization and bunch of other reasons). Use the tool you prefer for that.
 
 
-### Option 2: Development setup (for your convenience):
+### 2. Development setup (for your convenience):
 
 - I **strongly** suggest creating some **hard** (**directory**) links (_not_ symbolic links or file links!) as follows (see example guide here: https://www.howtogeek.com/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/). 
 
@@ -88,45 +88,45 @@ In short, you **_are_** allowed to...
 
 **PHASE 1**
 
-**1.** Fork this repository (or just download it with a Git client or as ZIP file from the upper part of this page) – it's up to you to choose the method.
+**2.1.1.** Fork this repository (or just download it with a Git client or as ZIP file from the upper part of this page) – it's up to you to choose the method.
 
-**2.** Start creating the **hard directory links** (with a tool you've chosen or command line – again, it's up to you to choose the method):
+**2.1.2.** Start creating the **hard directory links** (with a tool you've chosen or command line – again, it's up to you to choose the method):
 
-**3.**
+**2.1.3.**
 - **Destination/Link #1**: `Revolution.WORLDNAME/functions/core` folder (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!). Depending on the tool or script/command line you're using, you might need to create an empty `Revolution.WORLDNAME/functions/core` folder at first.
 - **Source/Target #1**: `core` folder (located at the main directory of this repository, wherever you have it on your disk).
 
-**4.**
+**2.1.4.**
 - **Destination/Link #2**: `Revolution.WORLDNAME/ui/coreUi` folder (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!). Depending on the tool or script/command line you're using, you might need to create an empty `Revolution.WORLDNAME/ui/uiCore` folder at first.
 - **Source/Target #2**: `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 
 **PHASE 2 — 3DEN Editor setup** (optional)
 
-**1.** Additionally, **after** – and only after – completing the previous steps in Development setup, you might want to make (preferably again hard) _directory_ links to your profile MPMissions folder (`yourArma3ProfileFolder/mpmissions` (for quick development in 3DEN editor) **and** game installation MPMissions directory (`Steam/steamapps/common/Arma 3/MPMissions`) for actual testing (including locality) with other players.
+**2.2.1.** Additionally, **after** – and only after – completing the previous steps in Development setup, you might want to make (preferably again hard) _directory_ links to your profile MPMissions folder (`yourArma3ProfileFolder/mpmissions` (for quick development in 3DEN editor) **and** game installation MPMissions directory (`Steam/steamapps/common/Arma 3/MPMissions`) for actual testing (including locality) with other players.
 - For quick editing in 3DEN editor: 
   - Note! `yourArma3ProfileFolder` might be located at `yourUsername\Documents\Arma 3` **or** `yourUsername\Documents\Arma 3 - Other Profiles` on Windows.
 
-**2.** 
+**2.2.2.** 
 - **Destination/Link #3**: `Revolution.WORLDNAME` folder in `yourArma3ProfileFolder` (!). (Depending on the tool or script/command line you're using, you might need to create an empty `yourArma3ProfileFolder/mpmissions/Revolution.WORLDNAME` folder at first).
 - **Source/Target #3**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 
 **PHASE 3 — local dedicated server setup** (optional)
 
-**1.** For locality testing or testing the code with multiple players on an actual _dedicated_ Arma 3 server:
+**2.3.1.** For locality testing or testing the code with multiple players on an actual _dedicated_ Arma 3 server:
   - `yourArma3ServerInstallDirectory` can be either Arma 3 install directory or dedicated Arma 3 Server Steam package.
    - Note! If you're using dedicated Arma 3 Server Steam package, you need to edit a file called `steam_appid.txt` in its install directory and replace the value with in the file `107410` with e.g. Notepad (do **not** use a text editor like _Word_ or _Wordpad_!). Then set the `steam_appid.txt` file to read-only mode. (Right-click the file in File Explorer and select "Properties", then tick the "Read only" box and save the changes.)
 
-**2.**
+**2.3.2.**
 - **Destination/Link #4**: `Revolution.WORLDNAME` folder in your Arma 3 (Server) installation folder -> `MPMissions` folder. (Depending on the tool or script/command line you're using, you might need to create an empty `Arma3OrArma3ServerInstallDirectory/MPMissions/Revolution.WORLDNAME` folder at first).
   - **Source/Target #4**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
 
-**(3.)** **Repeat** the development setup steps above for **each** Arma 3 map that you wish to play on (that's also supported, unless you create the configs for the map yourself).
+**(2.3.3.)** **Repeat** the development setup steps above for **each** Arma 3 map that you wish to play on (that's also supported, unless you create the configs for the map yourself).
 
-**STARTING EDITING AFTER COMPLETING DEVELOPMENT SETUP**
+### STARTING EDITING AFTER COMPLETING DEVELOPMENT SETUP
 
-**1.** **Open** the **main directory** of the **copied repository** (wherever you have it on your disk) with your favourite code editor. (My choice is _Visual Studio Code_ with some awesome extensions making scripting Arma a ton easier.)
+**3.1.1.** **Open** the **main directory** of the **copied repository** (wherever you have it on your disk) with your favourite code editor. (My choice is _Visual Studio Code_ with some awesome extensions making scripting Arma a ton easier.)
 
 **IMPORTANT!**
 
@@ -136,11 +136,11 @@ If you completed the previous steps in development setup:
 
 - This repository contains a Python script that generates `CfgFunctions.hpp` file that you can run after adding, removing or renaming functions. It's originally developed by **7erra** and further modified by me, **Ezcoo**. You need to have modern version of Python installed for it to work (install Python from Microsoft Store (recommended method) on Windows or download and install it from here: [https://www.python.org/downloads/](https://www.python.org/downloads/)).
 
-**1.** Configure the script: open it in a code editor and replace the `TAG` variable (marked with comment) _value_ with your own _value_ if needed. Do not change the variable name itself! 
+**4.1.** Configure the script: open it in a code editor and replace the `TAG` variable (marked with comment) _value_ with your own _value_ if needed. Do not change the variable name itself! 
 
-**2.** After installing Python, you can run the script (located at `core/functions/generate.py`) from command line with command: `python3 generate.py` (on Windows). Note that you need to be in a folder where the script is located at in the command line/terminal; you can open the current directory on command line by right-clicking empty space in the folder in File Explorer and choosing the appropriate option from the menu; the same applies to most Linux distributions as well).
+**4.2.** After installing Python, you can run the script (located at `core/functions/generate.py`) from command line with command: `python3 generate.py` (on Windows). Note that you need to be in a folder where the script is located at in the command line/terminal; you can open the current directory on command line by right-clicking empty space in the folder in File Explorer and choosing the appropriate option from the menu; the same applies to most Linux distributions as well).
 
-**3.** **Note** that the function filenames **must** adhere to the official naming standard (`fn_yourFunction.sqf`) and adhere to the folder structure too! See more info about `CfgFunctions` and the required standards here: [Bohemia WIKI - Arma 3: Functions Library](https://community.bistudio.com/wiki/Arma_3:_Functions_Library). 
+**4.3.** **Note** that the function filenames **must** adhere to the official naming standard (`fn_yourFunction.sqf`) and adhere to the folder structure too! See more info about `CfgFunctions` and the required standards here: [Bohemia WIKI - Arma 3: Functions Library](https://community.bistudio.com/wiki/Arma_3:_Functions_Library). 
 
 - _Use CfgFunctions! Really, not joking here._
 
