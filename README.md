@@ -114,7 +114,7 @@ Then start creating the **hard directory links** (with a tool you've chosen or c
 
 ## (2.) Development setup — 3DEN Editor setup (optional, recommended)
 
-### (2.2) Development setup — 3DEN Editor setup  — Prerequisites
+### (2.1) Development setup — 3DEN Editor setup  — Prerequisites
 - Additionally, **after** completing the previous steps in Development setup, you might want to make (preferably again hard) _directory_ links to your profile MPMissions folder (`yourArma3ProfileFolder/mpmissions` (for quick development in 3DEN editor) **and** game installation MPMissions directory (`Steam/steamapps/common/Arma 3/MPMissions`) for actual testing (including locality) with other players. 
 - Note! `yourArma3ProfileFolder` might be located at `yourUsername\Documents\Arma 3` **or** `yourUsername\Documents\Arma 3 - Other Profiles` on Windows.
 
@@ -132,7 +132,7 @@ For locality testing or testing the code with multiple players on an actual _ded
 
 ### (3.2) Development setup — local dedicated server setup — Creating a hard link from development folder to your local dedicated server
 - **Destination/Link #4**: `Revolution.WORLDNAME` folder in your Arma 3 (Server) installation folder -> `MPMissions` folder. (Depending on the tool or script/command line you're using, you might need to create an empty `Arma3OrArma3ServerInstallDirectory/MPMissions/Revolution.WORLDNAME` folder at first).
-  - **Source/Target #4**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
+- **Source/Target #4**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 ### (3.3) Development setup — local dedicated server setup — Repeating the above steps for each map
 - **Repeat** the development setup steps above for **each** Arma 3 map that you wish to play on (that's supported, unless you create the configs and map specific functions for the map yourself).
@@ -189,5 +189,6 @@ I'd like to thank everyone involved in this project and it's predecessors. Speci
 **Others:**
 
 - **qbt** for allowing me to use the code of the predecessor of this project, _Daylight RP_ (and teaching me so many things about SQF in general etc.)
+- **Chewz** for generously allowing me to use his server for testing and being helpful person in general
 - **7erra** for his awesome CfgFunctions generation script that I modified further
 - Everyone in the Arma community who has helped me to make this happen (just to name a few: **Leopard20**, **Dedmen**, **Lou Montana**, **Sa-Matra**, **koalas**, **R3vo**) – if I forgot to name you here, contact me!
