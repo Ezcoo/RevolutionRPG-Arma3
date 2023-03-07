@@ -72,7 +72,7 @@ In short, you **_are_** allowed to...
 ### 1.1 Deploying Revolution RPG on server — Downloading/syncing the gamemode files
 - Clone this repository either with a Git client or download the ZIP file from the button in upper part of this page.
 
-### 1.2 Deploying Revolution RPG on server — Unzipping (optional)
+### (1.2) Deploying Revolution RPG on server — Unzipping (optional)
 - Unzip the ZIP file (if it's what you downloaded manually).
 
 ### 1.3 Deploying Revolution RPG on server — Copying common core functions folder to mission folder
@@ -109,7 +109,7 @@ In short, you **_are_** allowed to...
 - **Source/Target #2**: `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 
-**(2.2) Development setup — 3DEN Editor setup** (optional, recommended)
+### (2.2) Development setup — 3DEN Editor setup** (optional, recommended)
 
 **(2.2.1)**
 - Additionally, **after** completing the previous steps in Development setup, you might want to make (preferably again hard) _directory_ links to your profile MPMissions folder (`yourArma3ProfileFolder/mpmissions` (for quick development in 3DEN editor) **and** game installation MPMissions directory (`Steam/steamapps/common/Arma 3/MPMissions`) for actual testing (including locality) with other players. 
