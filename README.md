@@ -50,7 +50,7 @@ In short, you **_are_** allowed to...
 - include installation instructions of the modified source code.
 
 
-## Requirements
+# Requirements
 
 ### Playing
 
@@ -62,9 +62,10 @@ In short, you **_are_** allowed to...
 - _Arma 3_ **or** _Arma 3 Server_ dedicated Steam package (see **[Development setup](https://github.com/Ezcoo/RevolutionRPG-Arma3/blob/main/README.md#2-development-setup-for-your-convenience)** below). Note that you need to host the gamemode on a _dedicated_ server, i.e. with `arma3server_x64.exe`. Player hosted (ingame) servers do not work properly.
 
 
-## Installation / Project Setup
+# Installation / Project Setup
 
 - **There are two important core folders (containing code and data) in the main directory of repository: `core` and `coreUi`**.
+- This guide is mostly for **Windows** users. (I assume that most Linux users can figure the following out mostly themselves.)
 
 ### 1. Deploying Revolution RPG on server:
 
@@ -130,7 +131,8 @@ In short, you **_are_** allowed to...
 - **Destination/Link #4**: `Revolution.WORLDNAME` folder in your Arma 3 (Server) installation folder -> `MPMissions` folder. (Depending on the tool or script/command line you're using, you might need to create an empty `Arma3OrArma3ServerInstallDirectory/MPMissions/Revolution.WORLDNAME` folder at first).
   - **Source/Target #4**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
 
-**(2.3.3.)** **Repeat** the development setup steps above for **each** Arma 3 map that you wish to play on (that's supported, unless you create the configs and map specific functions for the map yourself).
+**(2.3.3.)** 
+- **Repeat** the development setup steps above for **each** Arma 3 map that you wish to play on (that's supported, unless you create the configs and map specific functions for the map yourself).
 
 ### 3. Starting editing (after completing development setup above)
 
