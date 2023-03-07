@@ -81,7 +81,7 @@ In short, you **_are_** allowed to...
 ### 1.4 Deploying Revolution RPG on server — Copying common core user interfaces and related base defines to mission folder
 - Copy the `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk) into `Revolution.WORLDNAME/ui/` folder (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!).
 
-### (1.5) Deploying Revolution RPG on server — Packing the mission into PBO file** (optional, strongly recommended in production / if actually hosting the gamemode)
+### (1.5) Deploying Revolution RPG on server — Packing the mission into PBO file (optional, strongly recommended in production / if actually hosting the gamemode)
 - Optionally, you probably want to compile the mission files into a packed PBO file for multiple reasons (like optimization and bunch of other reasons). Use the tool you prefer for that.
 
 
@@ -109,25 +109,25 @@ In short, you **_are_** allowed to...
 - **Source/Target #2**: `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 
-**2.2 Development setup — 3DEN Editor setup** (optional, recommended)
+**(2.2) Development setup — 3DEN Editor setup** (optional, recommended)
 
-**2.2.1**
+**(2.2.1)**
 - Additionally, **after** completing the previous steps in Development setup, you might want to make (preferably again hard) _directory_ links to your profile MPMissions folder (`yourArma3ProfileFolder/mpmissions` (for quick development in 3DEN editor) **and** game installation MPMissions directory (`Steam/steamapps/common/Arma 3/MPMissions`) for actual testing (including locality) with other players. 
 - Note! `yourArma3ProfileFolder` might be located at `yourUsername\Documents\Arma 3` **or** `yourUsername\Documents\Arma 3 - Other Profiles` on Windows.
 
-**2.2.2**
+**(2.2.2)**
 - **Destination/Link #3**: `Revolution.WORLDNAME` folder in `yourArma3ProfileFolder` (!). (Depending on the tool or script/command line you're using, you might need to create an empty `yourArma3ProfileFolder/mpmissions/Revolution.WORLDNAME` folder at first).
 - **Source/Target #3**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 
-### 2.3 Development setup — local dedicated server setup (optional, recommended)
+### (2.3) Development setup — local dedicated server setup (optional, recommended)
 
-**2.3.1**
+**(2.3.1)**
 - For locality testing or testing the code with multiple players on an actual _dedicated_ Arma 3 server:
 - `yourArma3ServerInstallDirectory` can be either Arma 3 install directory or dedicated Arma 3 Server Steam package.
 - Note! If you're using dedicated Arma 3 Server Steam package, you need to edit a file called `steam_appid.txt` in its install directory and replace the value with in the file with `107410` with e.g. _Notepad_ (do **not** use a text editor like _Word_ or _Wordpad_!). Then set the `steam_appid.txt` file to read-only mode. (Right-click the file in File Explorer and select "Properties", then tick the "Read only" box and save the changes.)
 
-**2.3.2**
+**(2.3.2)**
 - **Destination/Link #4**: `Revolution.WORLDNAME` folder in your Arma 3 (Server) installation folder -> `MPMissions` folder. (Depending on the tool or script/command line you're using, you might need to create an empty `Arma3OrArma3ServerInstallDirectory/MPMissions/Revolution.WORLDNAME` folder at first).
   - **Source/Target #4**: `Revolution.WORLDNAME` folder (located at the main directory of this repository, wherever you have it on your disk).
 
@@ -145,9 +145,9 @@ _In case of you completed the previous steps in development setup (again, strong
 
 - **If you want to modify core files, edit _only_ files inside the `core` and `coreUI` folders in the main repository folder**, wherever it's located on your disk. The changes you'll make to the core folders get reflected to other folders automatically thanks to the (hard directory) links that you created in previous steps. (Just remember to save your changes in the code editor unless your editor does it automatically.)
 
-## 4. Automatic generation of `CfgFunctions`
+## (4.) Automatic generation of `CfgFunctions` (optional, strongly recommended)
 
-### 4.1 Automatic generation of `CfgFunctions` — Prerequisites
+### (4.1) Automatic generation of `CfgFunctions` — Prerequisites
 
 - `CfgFunctions` is a modern way to declare your functions in Arma 3. It offers various important benefits, like better security, more advanced debugging opportunities, and even improved performance. See [Bohemia Wiki - Arma 3: Functions Library](https://community.bistudio.com/wiki/Arma_3:_Functions_Library) for further information.
 - This repository contains a Python script named `generate.py` that automatically generates `CfgFunctions.hpp` file that you can run after adding, removing or renaming functions (instead of updating `CfgFunctions.hpp` manually). If you decide to not to use the Python script, you need to update `CfgFunctions.hpp` by yourself. The Python script has been originally developed by **7erra** and further modified by me, **Ezcoo**. You need to have modern version of Python installed for it to work.
@@ -155,20 +155,20 @@ _In case of you completed the previous steps in development setup (again, strong
 - **Note:** As you might have noticed already, the **Python script needs to be run separately for each map** (for now at least) so that the map specific functions in `Revolution.WORLDNAME/functions/mapSpecific` get included as well. (A fully automated solution might appear here in future. _Soon™_.)
 - Install Python from Microsoft Store (recommended method) on Windows or download and install it from here: [https://www.python.org/downloads/](https://www.python.org/downloads/)).
 
-### 4.2 Automatic generation of `CfgFunctions` — Configuring the Python script** 
+### (4.2) Automatic generation of `CfgFunctions` — Configuring the Python script** 
 - Configure the script: open `generate.py` in a code editor and replace the `TAG` variable (marked with comment) _value_ with your own _value_ if needed. Do not change the variable name itself! 
 
-### 4.3 Automatic generation of `CfgFunctions` — Running the Python script**
+### (4.3) Automatic generation of `CfgFunctions` — Running the Python script**
 - After installing Python, you can run the script (located at `Revolution.WORLDNAME/functions/generate.py`) from command line with command: `python3 generate.py` (on Windows). Note that your current command line/terminal folder needs to be the folder where the script is located at; you can open the current directory on command line by right-clicking empty space in the folder in File Explorer and choosing the appropriate option from the menu. The same applies to most Linux distributions as well.
 - **Repeat** this step (**4.2.**) for **each** map and **every time you rename, add or remove function files** (such as imaginary `core/functions/gps/fn_tutorialExample.sqf`) regardless of whether they are contained in core or map specific files before launching the mission in editor or launching your server.
 - It's probably a good idea to keep a command line or terminal in a correct folder open in the background while developing, using a shortcut in it (press UP arrow key to get the last line you've written to the command line/terminal) and then pressing ENTER to recompile the script since you need to do it all the time while at it.
 
-### 4.4 Automatic generation of `CfgFunctions` — Function file naming standards & folder structure** (mandatory)
+### (4.4) Automatic generation of `CfgFunctions` — Function file naming standards & folder structure** (mandatory)
 - **Note:** the function filenames **must** adhere to the official naming standard (`fn_yourFunction.sqf`) and adhere to a proper folder structure too! See more info about `CfgFunctions` and the required standards here: [Bohemia Wiki - Arma 3: Functions Library: Function Declaration](https://community.bistudio.com/wiki/Arma_3:_Functions_Library#Function_Declaration).
 - Core files (core file = used on all maps) must be added to `core` (functions) or `coreUi` (user interfaces and base defines) folders (located at the main directory of this repository, wherever you have it on your disk).
 - Map specific files have to be added to `Revolution.WORLDNAME/functions/mapSpecific/WORLDNAME` (functions) or `Revolution.WORLDNAME/ui/mapSpecific/WORLDNAME` (map specific defines and user interfaces).
 
-_Use CfgFunctions! It was added for a reason. Really, not joking here._
+_Use CfgFunctions! It was added for a reason. Really, I'm not joking here._
 
 
 ## Special thanks
