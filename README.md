@@ -155,15 +155,15 @@ _In case of you completed the previous steps in development setup (again, strong
 - **Note:** As you might have noticed already, the **Python script needs to be run separately for each map** (for now at least) so that the map specific functions in `Revolution.WORLDNAME/functions/mapSpecific` get included as well. (A fully automated solution might appear here in future. _Soon™_.)
 - Install Python from Microsoft Store (recommended method) on Windows or download and install it from here: [https://www.python.org/downloads/](https://www.python.org/downloads/)).
 
-### (4.2) Automatic generation of `CfgFunctions` — Configuring the Python script** 
+### (4.2) Automatic generation of `CfgFunctions` — Configuring the Python script
 - Configure the script: open `generate.py` in a code editor and replace the `TAG` variable (marked with comment) _value_ with your own _value_ if needed. Do not change the variable name itself! 
 
-### (4.3) Automatic generation of `CfgFunctions` — Running the Python script**
+### (4.3) Automatic generation of `CfgFunctions` — Running the Python script
 - After installing Python, you can run the script (located at `Revolution.WORLDNAME/functions/generate.py`) from command line with command: `python3 generate.py` (on Windows). Note that your current command line/terminal folder needs to be the folder where the script is located at; you can open the current directory on command line by right-clicking empty space in the folder in File Explorer and choosing the appropriate option from the menu. The same applies to most Linux distributions as well.
 - **Repeat** this step (**4.2.**) for **each** map and **every time you rename, add or remove function files** (such as imaginary `core/functions/gps/fn_tutorialExample.sqf`) regardless of whether they are contained in core or map specific files before launching the mission in editor or launching your server.
 - It's probably a good idea to keep a command line or terminal in a correct folder open in the background while developing, using a shortcut in it (press UP arrow key to get the last line you've written to the command line/terminal) and then pressing ENTER to recompile the script since you need to do it all the time while at it.
 
-### (4.4) Automatic generation of `CfgFunctions` — Function file naming standards & folder structure** (mandatory)
+### (4.4) Automatic generation of `CfgFunctions` — Function file naming standards & folder structure (mandatory)
 - **Note:** the function filenames **must** adhere to the official naming standard (`fn_yourFunction.sqf`) and adhere to a proper folder structure too! See more info about `CfgFunctions` and the required standards here: [Bohemia Wiki - Arma 3: Functions Library: Function Declaration](https://community.bistudio.com/wiki/Arma_3:_Functions_Library#Function_Declaration).
 - Core files (core file = used on all maps) must be added to `core` (functions) or `coreUi` (user interfaces and base defines) folders (located at the main directory of this repository, wherever you have it on your disk).
 - Map specific files have to be added to `Revolution.WORLDNAME/functions/mapSpecific/WORLDNAME` (functions) or `Revolution.WORLDNAME/ui/mapSpecific/WORLDNAME` (map specific defines and user interfaces).
