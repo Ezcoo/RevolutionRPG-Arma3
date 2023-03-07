@@ -171,7 +171,7 @@ _In case of you completed the previous steps in development setup (again, strong
 _Use CfgFunctions! It was added for a reason. Really, I'm not joking here._
 
 
-## Special thanks
+# Special thanks
 
 I'd like to thank everyone involved in this project and it's predecessors. Special thanks go to the following people and projects:
 
