@@ -59,7 +59,7 @@ In short, you **_are_** allowed to...
 
 ### Hosting
 
-- _Arma 3_ **or** _Arma 3 Server_ dedicated Steam package (see **Development setup** below). Note that you need to host the gamemode on a _dedicated_ server, i.e. with `arma3server_x64.exe`. Player hosted (ingame) servers do not work properly.
+- _Arma 3_ **or** _Arma 3 Server_ dedicated Steam package (see **[Development setup](https://github.com/Ezcoo/RevolutionRPG-Arma3/blob/main/README.md#2-development-setup-for-your-convenience)** below). Note that you need to host the gamemode on a _dedicated_ server, i.e. with `arma3server_x64.exe`. Player hosted (ingame) servers do not work properly.
 
 
 ## Installation / Project Setup
@@ -104,7 +104,7 @@ In short, you **_are_** allowed to...
 - **Source/Target #1**: `core` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 **2.1.4.**
-- **Destination/Link #2**: `Revolution.WORLDNAME/ui/coreUi` folder (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!). Depending on the tool or script/command line you're using, you might need to create an empty `Revolution.WORLDNAME/ui/uiCore` folder at first.
+- **Destination/Link #2**: `Revolution.WORLDNAME/ui/coreUi` folder (where `WORLDNAME` is the _internal_ Arma 3 world name of the map you want to play on – note that e.g. Livonia is internally named as `Enoch`!). Depending on the tool or script/command line you're using, you might need to create an empty `Revolution.WORLDNAME/ui/coreUi` folder at first.
 - **Source/Target #2**: `coreUi` folder (located at the main directory of this repository, wherever you have it on your disk).
 
 
@@ -148,12 +148,13 @@ _In case of you completed the previous steps in development setup (again, strong
 **4.1. Automatic generation of `CfgFunctions` — Prerequisites**
 
 - `CfgFunctions` is a modern way to declare your functions in Arma 3. It offers various important benefits, like better security, more advanced debugging opportunities, and even improved performance. See [Bohemia Wiki - Arma 3: Functions Library](https://community.bistudio.com/wiki/Arma_3:_Functions_Library) for further information.
-- This repository contains a Python script that automatically generates `CfgFunctions.hpp` file that you can run after adding, removing or renaming functions (instead of updating `CfgFunctions.hpp` manually). If you decide to not to use the Python script, you need to update `CfgFunctions.hpp` by yourself. The Python script has been originally developed by **7erra** and further modified by me, **Ezcoo**. You need to have modern version of Python installed for it to work.
-- `CfgFunctions.hpp` and the Python script are located at `Revolution.WORLDNAME/functions` folder.
+- This repository contains a Python script named `generate.py` that automatically generates `CfgFunctions.hpp` file that you can run after adding, removing or renaming functions (instead of updating `CfgFunctions.hpp` manually). If you decide to not to use the Python script, you need to update `CfgFunctions.hpp` by yourself. The Python script has been originally developed by **7erra** and further modified by me, **Ezcoo**. You need to have modern version of Python installed for it to work.
+- `CfgFunctions.hpp` and the Python script (`generate.py`) are located at `Revolution.WORLDNAME/functions` folder.
+- **Note:** As you might have noticed already, the **Python script needs to be run separately for each map** (for now at least) so that the map specific functions in `Revolution.WORLDNAME/functions/mapSpecific` get included as well. (A fully automated solution might appear here in future. _Soon™_.)
 - Install Python from Microsoft Store (recommended method) on Windows or download and install it from here: [https://www.python.org/downloads/](https://www.python.org/downloads/)).
 
 **4.1. Automatic generation of `CfgFunctions` — Configuring the Python script** 
-- Configure the script: open it in a code editor and replace the `TAG` variable (marked with comment) _value_ with your own _value_ if needed. Do not change the variable name itself! 
+- Configure the script: open `generate.py` in a code editor and replace the `TAG` variable (marked with comment) _value_ with your own _value_ if needed. Do not change the variable name itself! 
 
 **4.2. Automatic generation of `CfgFunctions` — Running the Python script**
 - After installing Python, you can run the script (located at `Revolution.WORLDNAME/functions/generate.py`) from command line with command: `python3 generate.py` (on Windows). Note that your current command line/terminal folder needs to be the folder where the script is located at; you can open the current directory on command line by right-clicking empty space in the folder in File Explorer and choosing the appropriate option from the menu. The same applies to most Linux distributions as well.
