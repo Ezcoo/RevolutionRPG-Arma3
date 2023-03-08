@@ -1,24 +1,56 @@
 from pathlib import Path
 import glob
 
-def recursiveFileSearch(file_or_folder):
-    
+def format_function_class(sqf_file: Path):  
     function_name = ""
     function_path = ""
+    subcategory = ""
+    subcategory_folder = ""
     return_value = ""
 
-    if file_or_folder.is_dir():
-      recursiveFileSearch(file_or_folder)
-    elif file_or_folder.is_file():
-      if (file_or_folder.name.startswith('fn_')):
-        function_path = file_or_folder.relative_to(folder_functions.parent)
-        function_name = file_or_folder.stem.replace('fn_', '')
-        return_value = f"class {function_name}" + f" {{ file = \"{function_path}\"; }};"
-      else:  
-        return_value = ""
+    if sqf_file.is_file():
+      function_path = sqf_file.relative_to(folder_functions.parent)
+      depth = len(function_path.parents)
+
+      if (sqf_file.name.startswith('fn_')):
+        function_path = sqf_file.relative_to(folder_functions.parent)
+
+        if depth > 3:
+          subcategory_folder = function_path.parents[depth - (depth - (depth - 4))]
+          subcategory = format_subcategory(subcategory_folder)
+          function_name = sqf_file.stem.replace('fn_', '')
+          return_value = nested_folder_function_name(subcategory, function_name, function_path)
+        
+        elif depth <= 3:
+
+          if depth == 3:
+            subcategory_folder = function_path.parent
+            subcategory = format_subcategory(subcategory_folder)
+            function_name = sqf_file.stem.replace('fn_', '')
+            return_value = nested_folder_function_name(subcategory, function_name, function_path)
+          
+          elif depth == 2:
+            function_name = sqf_file.stem.replace('fn_', '')
+            return_value = core_function_name(subcategory, function_name, function_path)
+      
+      else:
+        print(f"### ERROR! Function name didn't start with \"fn_\". It was not added to CfgFunctions. Function path: {function_path}")
     
     return return_value
 
+def format_subcategory(subcategory: Path):
+  prefix = subcategory.parent
+  subcategory = str(subcategory).replace((str(prefix)), '')
+  subcategory = subcategory[1:]
+  return subcategory
+
+def nested_folder_function_name(subcategory: Path, function_name: str, function_path: Path):
+  return f"class {subcategory}_{function_name}" + f" {{ file = \"{function_path}\"; }};"
+
+def core_function_name(subcategory: Path, function_name: str, function_path: Path):
+  return f"class {function_name}" + f" {{ file = \"{function_path}\"; }};"
+
+# MAIN SCRIPT START
 
 # DEFINE YOUR OWN TAG INSIDE THE VARIABLE BELOW
 tag = 'REVOLUTION'
@@ -46,22 +78,25 @@ categories.sort(key=lambda x: x.name.upper())
 content.append("")
 
 for cat in categories:
-   print(f"Category name: {cat.name}")
-   content.extend([f'\t\tclass {cat.name}', "\t\t{"])
+  print(f"### CATEGORY ADDED: {cat.name}")
+  content.extend([f'\t\tclass {cat.name}', "\t\t{"])
 
-   subfolders_files = glob.glob(str(cat) + '/**/*.sqf', recursive=True)
+  subfolders_files = glob.glob(str(cat) + '/**/*.sqf', recursive=True)
+   
 
-   if len(subfolders_files) > 0:
-     for f in subfolders_files:
-       path_to_folder_or_file = Path(f)
-       sqfFile = recursiveFileSearch(path_to_folder_or_file)
-       print(f"Adding the following to CfgFunctions: {sqfFile}")
+  if len(subfolders_files) > 0:
+    for f in subfolders_files:
+      sqf_file = Path(f)
+      formatted_class = format_function_class(sqf_file)
+      # print(f"Adding the following to CfgFunctions: {formatted_class}")
        
-       if sqfFile:
-         content.append(f'\t\t\t{sqfFile}')
+      if formatted_class != "" or formatted_class:
+        content.append(f'\t\t\t{formatted_class}')
 
-   content.append('\t\t};\n')
+  content.append('\t\t};\n')
 
 content.extend(["\t};","","};"])
 output = '\n'.join(content)
 file_cfg.write_text(output)
+print("")
+print("### CfgFunctions is now ready!")
