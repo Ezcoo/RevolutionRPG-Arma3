@@ -21,21 +21,20 @@ def format_function_class(sqf_file: Path):
           function_name = sqf_file.stem.replace('fn_', '')
           return_value = nested_folder_function_name(subcategory, function_name, function_path)
         
-        elif depth <= 3:
-
-          if depth == 3:
-            subcategory_folder = function_path.parent
-            subcategory = format_subcategory(subcategory_folder)
-            function_name = sqf_file.stem.replace('fn_', '')
-            return_value = nested_folder_function_name(subcategory, function_name, function_path)
+        elif depth == 3:
+          subcategory_folder = function_path.parent
+          function_name = sqf_file.stem.replace('fn_', '')
+          return_value = core_function_name(subcategory, function_name, function_path)
           
-          elif depth == 2:
-            function_name = sqf_file.stem.replace('fn_', '')
-            return_value = core_function_name(subcategory, function_name, function_path)
+        else:
+            print(f"### WARNING! Function {function_name} didn't get included to CfgFunctions. It needs to be located in a subfolder of \\functions folder.")
       
       else:
-        print(f"### ERROR! Function name didn't start with \"fn_\". It was not added to CfgFunctions. Function path: {function_path}")
+        print(f"### WARNING! Function name didn't start with \"fn_\". It was not added to CfgFunctions. Function path: {function_path}")
     
+    else:
+      print("### ERROR: Generic error! Something went wrong when generating CfgFunctions. Double check the contents of it.")
+
     return return_value
 
 def format_subcategory(subcategory: Path):
@@ -78,7 +77,9 @@ categories.sort(key=lambda x: x.name.upper())
 content.append("")
 
 for cat in categories:
+  print("")
   print(f"### CATEGORY ADDED: {cat.name}")
+  print("")
   content.extend([f'\t\tclass {cat.name}', "\t\t{"])
 
   subfolders_files = glob.glob(str(cat) + '/**/*.sqf', recursive=True)
@@ -96,7 +97,10 @@ for cat in categories:
   content.append('\t\t};\n')
 
 content.extend(["\t};","","};"])
+
 output = '\n'.join(content)
+
 file_cfg.write_text(output)
+
 print("")
-print("### CfgFunctions is now ready!")
+print("###### CfgFunctions is now ready! :)")
