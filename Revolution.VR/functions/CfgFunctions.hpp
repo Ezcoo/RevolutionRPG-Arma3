@@ -11,7 +11,7 @@ class CfgFunctions
 
 		class core
 		{
-			class core_helloWorld { file = "functions\core\fn_helloWorld.sqf"; };
+			class helloWorld { file = "functions\core\fn_helloWorld.sqf"; };
 			class debug_inheritsTree { file = "functions\core\debug\fn_inheritsTree.sqf"; };
 			class debug_logContent { file = "functions\core\debug\fn_logContent.sqf"; };
 			class gpsRouting_compile { file = "functions\core\gpsRouting\gps\fn_compile.sqf"; };
